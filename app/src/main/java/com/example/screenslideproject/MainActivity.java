@@ -1,19 +1,13 @@
 package com.example.screenslideproject;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
@@ -30,9 +24,6 @@ import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.auth.UserInfo;
-import com.squareup.picasso.Picasso;
-
 
 public class MainActivity extends AppCompatActivity {
 
@@ -132,18 +123,19 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @SuppressLint("SetTextI18n")
     private void updateUI(FirebaseUser user) {
         if (user != null ){
 
-            String name = user.getDisplayName();
+       //     String name = user.getDisplayName();
             String email = user.getEmail();
-            String photo = String.valueOf(user.getPhotoUrl());
+      //      String photo = String.valueOf(user.getPhotoUrl());
 
             text.append(" info: \n");
-          //  text.append(name+"\n");
+         //    text.append(name+"\n");
             text.append(email);
 
-           // Picasso.get().load(photo).into(image);
+          //  Picasso.get().load(photo).into(image);
             btn_login.setVisibility(View.INVISIBLE);
             btn_logout.setVisibility(View.VISIBLE);
             btn_enter.setVisibility(View.VISIBLE);
